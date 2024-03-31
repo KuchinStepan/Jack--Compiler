@@ -113,3 +113,5 @@ MethodName ( Expression , Expression , … , Expression )
 - Keyboard — ввод с клавиатуры
 - Memory — прямой доступ к памяти
 - Sys — управление выполнением программы
+
+Полное описание классов операционной системы: [Jack_OS_API.pdf](https://github.com/KuchinStepan/Jack--Compiler/files/14817572/Jack_OS_API.pdf)
