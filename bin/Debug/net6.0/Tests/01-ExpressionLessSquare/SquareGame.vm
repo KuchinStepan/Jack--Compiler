@@ -1,0 +1,136 @@
+function SquareGame.new 0
+push constant 2
+call Memory.alloc 1
+pop pointer 0
+push this 0
+pop this 0
+push this 1
+pop this 1
+push this 0
+return
+function SquareGame.dispose 0
+push argument 0
+pop pointer 0
+push this 0
+call Square.dispose 1
+pop temp 0
+push this 0
+call Memory.deAlloc 1
+pop temp 0
+push constant 0
+return
+function SquareGame.moveSquare 0
+push argument 0
+pop pointer 0
+push this 1
+not
+if-goto if1Label0
+push this 0
+call Square.moveUp 1
+pop temp 0
+label if1Label0
+push this 1
+not
+if-goto if1Label1
+push this 0
+call Square.moveDown 1
+pop temp 0
+label if1Label1
+push this 1
+not
+if-goto if1Label2
+push this 0
+call Square.moveLeft 1
+pop temp 0
+label if1Label2
+push this 1
+not
+if-goto if1Label3
+push this 0
+call Square.moveRight 1
+pop temp 0
+label if1Label3
+push this 1
+call Sys.wait 1
+pop temp 0
+push constant 0
+return
+function SquareGame.run 2
+push argument 0
+pop pointer 0
+push local 0
+pop local 1
+label while1Label0
+push local 1
+not
+if-goto while2Label0
+label while1Label1
+push local 0
+not
+if-goto while2Label1
+push local 0
+pop local 0
+push pointer 0
+call SquareGame.moveSquare 1
+pop temp 0
+goto while1Label1
+label while2Label1
+push local 0
+not
+if-goto if1Label4
+push local 1
+pop local 1
+label if1Label4
+push local 0
+not
+if-goto if1Label5
+push this 0
+call Square.decSize 1
+pop temp 0
+label if1Label5
+push local 0
+not
+if-goto if1Label6
+push this 0
+call Square.incSize 1
+pop temp 0
+label if1Label6
+push local 0
+not
+if-goto if1Label7
+push local 1
+pop this 1
+label if1Label7
+push local 0
+not
+if-goto if1Label8
+push local 0
+pop this 1
+label if1Label8
+push local 0
+not
+if-goto if1Label9
+push this 0
+pop this 1
+label if1Label9
+push local 0
+not
+if-goto if1Label10
+push this 1
+pop this 1
+label if1Label10
+label while1Label2
+push local 0
+not
+if-goto while2Label2
+push local 0
+pop local 0
+push pointer 0
+call SquareGame.moveSquare 1
+pop temp 0
+goto while1Label2
+label while2Label2
+goto while1Label0
+label while2Label0
+push constant 0
+return
